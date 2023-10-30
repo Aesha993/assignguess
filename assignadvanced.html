@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+</head>
+<body>
+    <h2>Guessing the number game.</h2>
+    
+</body>
+<script>
+    
+const randomNumber = Math.floor(Math.random() * 100) + 1;
+
+
+let userGuess;
+let numberOfGuesses = 0;
+const maxGuesses = 10; 
+
+
+while (numberOfGuesses < maxGuesses) {
+   
+    userGuess = parseInt(prompt("Guess the number between 1 and 100:"));
+
+   
+        if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) {
+        alert("Please enter a valid number between 1 and 100.");
+        continue;
+    }
+
+    
+    numberOfGuesses++;
+
+   
+    if (userGuess === randomNumber) {
+        alert("Congratulations! You've guessed the correct number: " + randomNumber);
+        break; 
+    } else if (userGuess < randomNumber) {
+        alert("Try again. Your guess is too low.");
+    } else {
+        alert("Try again. Your guess is too high.");
+    }
+
+   
+    if (numberOfGuesses === maxGuesses) {
+        alert("Sorry, you've reached the maximum number of guesses. The correct number was: " + randomNumber);
+    };
+      
+
+
+    
+}
+
+</script>
+</html>
